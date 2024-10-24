@@ -80,8 +80,8 @@ export default function App() {
   // https://developer.mappedin.com/v6/demo-keys-and-maps/
   const { isLoading, error, mapData } = useMapData({
     mapId: '66f7ff6142d0ac000b79d8db',
-    key: process.env.KEY,
-    secret: process.env.SECRET,
+    key: process.env.VERCEL_MY_KEY,
+    secret: process.env.VERCEL_MY_SECRET,
   });
 
   if (isLoading) {
