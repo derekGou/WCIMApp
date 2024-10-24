@@ -81,8 +81,8 @@ export default function App() {
   console.log(import.meta.env.VITE_MY_KEY)
   const { isLoading, error, mapData } = useMapData({
     mapId: '66f7ff6142d0ac000b79d8db',
-    key: import.meta.env.VITE_MY_KEY,
-    secret: import.meta.env.VITE_MY_SECRET,
+    key: import.meta.env.VITE_MY_VERCEL_MY_KEY,
+    secret: import.meta.env.VITE_MY_VERCEL_MY_SECRET,
   });
 
   if (isLoading) {
