@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactHTMLElement } from "react";
+import  { useState, useEffect } from "react";
 import { MapView, useMapData, useMap, Label } from "@mappedin/react-sdk";
 import "@mappedin/react-sdk/lib/esm/index.css";
 import { IoIosSearch } from "react-icons/io";
@@ -35,7 +35,7 @@ function MyCustomComponent() {
           mapView.Labels.add(coords, connection.name);
       }
   });
-  var fullList = spaceList
+  // var fullList = spaceList
   spaceList = [...new Set(spaceList)]
   spaceList.sort()
 
