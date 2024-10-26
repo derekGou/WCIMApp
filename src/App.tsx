@@ -38,20 +38,24 @@ function MyCustomComponent() {
   // var fullList = spaceList
   spaceList = [...new Set(spaceList)]
   spaceList.sort()
+  const [menuDisplay, setMenuDisplay] = useState('hidden')
 
-useEffect(()=>{
-  var rows: JSX.Element[] = []
-  for (let i = 0; i<spaceList.length; i++){
-    if ((input!='')&&(spaceList[i].toLowerCase().indexOf(input.toLowerCase())!=-1)){
-      rows.push(
-        <div key={i} className="hover:bg-[#eee] py-[6px] px-[20px] border-t-[1px] border-t-[#bbb] border-t-solid text-[0.9rem] cursor-pointer bg-white">
-          <p className="text-[#222]">{spaceList[i]}</p>
-        </div>
-      )
+  useEffect(()=>{
+    var rows: JSX.Element[] = []
+    for (let i = 0; i<spaceList.length; i++){
+      if ((input!='')&&(spaceList[i].toLowerCase().indexOf(input.toLowerCase())!=-1)){
+        rows.push(
+          <div key={i} className="hover:bg-[#eee] py-[6px] px-[20px] border-t-[1px] border-t-[#bbb] border-t-solid text-[0.9rem] cursor-pointer bg-white" onClick={()=>{
+            setMenuDisplay('flex')
+          }}>
+            <p className="text-[#222]">{spaceList[i]}</p>
+          </div>
+        )
+      }
     }
-  }
-  setAutofill(rows)
-}, [input])
+    setAutofill(rows)
+  }, [input])
+
 
   return (
     <>
@@ -70,6 +74,9 @@ useEffect(()=>{
             {autofill}
           </div>
         </div>
+      </div>
+      <div style={{ display: menuDisplay }} className="top-0 p-[20px] flex-row items-center justify-center fixed box-border w-[400px] top-0 max-w-screen h-screen">
+
       </div>
     </>
   );
