@@ -1,4 +1,4 @@
-import  { useState, useEffect, useRef } from "react";
+import  { useState, useEffect } from "react";
 import { MapView, useMapData, useMap, Label } from "@mappedin/react-sdk";
 import "@mappedin/react-sdk/lib/esm/index.css";
 import { IoIosSearch, IoIosClose } from "react-icons/io";
@@ -40,7 +40,7 @@ function MyCustomComponent() {
   spaceList.sort()
 
   const [menuDisplay, setMenuDisplay] = useState('none')
-  const [content, setContent] = useState(['https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png'])
+  // const [content, setContent] = useState(['https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png'])
 
   const runMenu = (nameStr:string) => {
     let itemCount:number = 0
